@@ -21,7 +21,7 @@ echo $env_name
 echo ${stable_revision}
 
 
-if [ ! "$stable_revision" ]
+if [ -z "${stable_revision}" ]
 then
 	echo "WARNING: Test failed, undeploying and deleting revision $rev_num"
 
