@@ -5,7 +5,7 @@
 pipeline {
     agent any
 
-properties([
+options([
   parameters([
         string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName'),
         password(name: 'apigeePassword', defaultValue: 'Apigee33916@', description: 'ApiGee Password'),
@@ -19,11 +19,11 @@ properties([
         nodejs 'nodejs'
     }
 
-    environment {
-        final apigeeUsername = params.apigeeUsername
-        final apigeePassword = params.apigeePassword
-        final base64encoded = params.base64encoded
+final apigeeUsername = params.apigeeUsername
+final apigeePassword = params.apigeePassword
+final base64encoded = params.base64encoded
 
+    environment {
         //getting the current stable/deployed revision...this is used in undeploy.sh in case of failure...
         stable_revision = sh(script: 'curl -H "Authorization: Basic $base64encoded" "https://api.enterprise.apigee.com/v1/organizations/bmutziu-eval/apis/HR-API/deployments" | jq -r ".environment[0].revision[0].name"', returnStdout: true).trim()
     }
