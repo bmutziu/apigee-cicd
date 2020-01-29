@@ -59,13 +59,13 @@ pipeline {
                 }
             }
         }
-        stage('Promotion') {
+/*        stage('Promotion') {
             steps {
                 timeout(time: 2, unit: 'DAYS') {
                     input message: 'Do you want to Approve?', ok: 'Yes'
                 }
             }
-        }
+        }*/
         stage('Deploy to Production') {
             steps {
                  //deploy using maven plugin
