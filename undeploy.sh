@@ -1,10 +1,10 @@
 #!/bin/bash
 
-current_deployment_info=$(curl -H "Authorization: Basic $base64encoded" "https://api.enterprise.apigee.com/v1/organizations/onlineman477-eval/apis/HR-API/deployments") 
+current_deployment_info=$(curl -H "Authorization: Basic $base64encoded" "https://api.enterprise.apigee.com/v1/organizations/bmutziu-eval/apis/HR-API/deployments")
 
-rev_num=$(jq -r .environment[0].revision[0].name <<< "${current_deployment_info}" ) 
-env_name=$(jq -r .environment[0].name <<< "${current_deployment_info}" ) 
-api_name=$(jq -r .name <<< "${current_deployment_info}" ) 
+rev_num=$(jq -r .environment[0].revision[0].name <<< "${current_deployment_info}" )
+env_name=$(jq -r .environment[0].name <<< "${current_deployment_info}" )
+api_name=$(jq -r .name <<< "${current_deployment_info}" )
 org_name=$(jq -r .organization <<< "${current_deployment_info}" )
 
 declare -r hardcoding_stable_revision=20
