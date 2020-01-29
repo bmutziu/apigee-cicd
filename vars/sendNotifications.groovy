@@ -1,5 +1,7 @@
+#!/usr/bin/env groovy
+
 def call(String buildStatus = 'STARTED') {
- // Build status of null means success.
+ // Build status of null means successful.
  //cucumber '**/*.json'
  buildStatus = buildStatus ?: 'SUCCESS'
 

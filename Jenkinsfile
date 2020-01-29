@@ -4,6 +4,13 @@
 
 pipeline {
     agent any
+
+    parameters {
+        string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName')
+        password(name: 'apigeePassword', defaultValue: 'Apigee33916@', description: 'ApiGee Password')
+        string(name: 'base64encoded', defaultValue: 'Ym11dHppdUBnbWFpbC5jb206QXBpZ2VlMzM5MTZA', description: 'Username Password Combo Encoded')
+    }
+
     tools {
         maven 'm2'
         jdk 'openjdk'
@@ -11,6 +18,10 @@ pipeline {
     }
 
     environment {
+        final apigeeUsername = ${params.apigeeUsername}
+        final apigeePassword = ${params.apigeePassword}
+        final base64encoded = ${params.base64encoded}
+
         //getting the current stable/deployed revision...this is used in undeploy.sh in case of failure...
         stable_revision = sh(script: 'curl -H "Authorization: Basic $base64encoded" "https://api.enterprise.apigee.com/v1/organizations/bmutziu-eval/apis/HR-API/deployments" | jq -r ".environment[0].revision[0].name"', returnStdout: true).trim()
     }
