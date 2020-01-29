@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="15" name="HR-API">
+    <Basepaths>/hr</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1562271590046</CreatedAt>
+    <CreatedBy>onlineman477@gmail.com</CreatedBy>
+    <Description>SILENTSHADOW$ git: e148adec SilentShadow</Description>
+    <DisplayName>hr-api</DisplayName>
+    <LastModifiedAt>1562687096831</LastModifiedAt>
+    <LastModifiedBy>onlineman477@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:5a8b8e393941bd33f9de90bb8e2e959dd0af84369ee4247b06c9ccf814cda7c3a7a1fdab47e8f28e91e851894df59de30e0485f813b034ff05c3832210241939</ManifestVersion>
+    <Policies>
+        <Policy>AM-CustomErrorResponse</Policy>
+        <Policy>AM-PrivateKey</Policy>
+        <Policy>AM-Response</Policy>
+        <Policy>AM-Setting-New-Payload</Policy>
+        <Policy>AS-Remove-URIPath</Policy>
+        <Policy>Assign-Message-1</Policy>
+        <Policy>EV-Extracting-Payload</Policy>
+        <Policy>JS-Logging-User-Setting-ID</Policy>
+        <Policy>JTP-Too-Long-String</Policy>
+        <Policy>Key-Value-Map-Operations-Credentials</Policy>
+        <Policy>OAuth-Verify</Policy>
+        <Policy>REP-Checking-JSON-Payload</Policy>
+        <Policy>RF-Invalid-UserID</Policy>
+        <Policy>RF-Missing-Phone-Number</Policy>
+        <Policy>Response-Cache-CICD</Policy>
+        <Policy>Verify-JWT</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://Logging-User-Setting-ID.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
