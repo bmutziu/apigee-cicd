@@ -5,11 +5,13 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName')
-        password(name: 'apigeePassword', defaultValue: 'Apigee33916@', description: 'ApiGee Password')
+properties([
+  parameters([
+        string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName'),
+        password(name: 'apigeePassword', defaultValue: 'Apigee33916@', description: 'ApiGee Password'),
         string(name: 'base64encoded', defaultValue: 'Ym11dHppdUBnbWFpbC5jb206QXBpZ2VlMzM5MTZA', description: 'Username Password Combo Encoded')
-    }
+        ])
+])
 
     tools {
         maven 'm2'
