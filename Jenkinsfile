@@ -5,7 +5,7 @@
 pipeline {
     agent any
 
-options([
+properties([
   parameters([
         string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName'),
         password(name: 'apigeePassword', defaultValue: 'Apigee33916@', description: 'ApiGee Password'),
@@ -19,9 +19,9 @@ options([
         nodejs 'nodejs'
     }
 
-final apigeeUsername = params.apigeeUsername
-final apigeePassword = params.apigeePassword
-final base64encoded = params.base64encoded
+//final apigeeUsername = params.apigeeUsername
+//final apigeePassword = params.apigeePassword
+//final base64encoded = params.base64encoded
 
     environment {
         //getting the current stable/deployed revision...this is used in undeploy.sh in case of failure...
