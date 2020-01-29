@@ -60,8 +60,10 @@ pipeline {
             }
         }
         stage('Promotion') {
+            steps {
                 timeout(time: 2, unit: 'DAYS') {
-                    input 'Do you want to Approve?'
+                    input 'Do you want to Approve?', ok: ‘Yes’
+                }
             }
         }
         stage('Deploy to Production') {
