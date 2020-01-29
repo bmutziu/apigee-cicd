@@ -2,9 +2,6 @@
 
 @Library('slackNotifications-shared-library@master') _
 
-pipeline {
-    agent any
-
 properties([
   parameters([
         string(name: 'apigeeUsername', defaultValue: 'bmutziu@gmail.com', description: 'ApiGee UserName'),
@@ -12,6 +9,10 @@ properties([
         string(name: 'base64encoded', defaultValue: 'Ym11dHppdUBnbWFpbC5jb206QXBpZ2VlMzM5MTZA', description: 'Username Password Combo Encoded')
         ])
 ])
+
+
+pipeline {
+    agent any
 
     tools {
         maven 'm2'
