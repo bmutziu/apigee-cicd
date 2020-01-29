@@ -10,6 +10,9 @@ properties([
         ])
 ])
 
+//final apigeeUsername = params.apigeeUsername
+//final apigeePassword = params.apigeePassword
+//final base64encoded = params.base64encoded
 
 pipeline {
     agent any
@@ -20,12 +23,9 @@ pipeline {
         nodejs 'nodejs'
     }
 
-//final apigeeUsername = params.apigeeUsername
-//final apigeePassword = params.apigeePassword
-//final base64encoded = params.base64encoded
-
     environment {
         //getting the current stable/deployed revision...this is used in undeploy.sh in case of failure...
+        sh "echo This is it: ${base64encoded}"
         stable_revision = sh(script: 'curl -H "Authorization: Basic $base64encoded" "https://api.enterprise.apigee.com/v1/organizations/bmutziu-eval/apis/HR-API/deployments" | jq -r ".environment[0].revision[0].name"', returnStdout: true).trim()
     }
 
