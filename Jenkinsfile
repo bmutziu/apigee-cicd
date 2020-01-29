@@ -40,7 +40,7 @@ pipeline {
         stage('Policy-Code Analysis') {
             steps {
                 sh "npm install -g apigeelint"
-                sh "apigeelint -s HR-API/apiproxy/ -f codeframe.js"
+                sh "apigeelint -s hr-api/apiproxy/ -f codeframe.js"
             }
         }
         stage('Unit-Test-With-Coverage') {
