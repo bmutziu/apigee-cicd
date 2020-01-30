@@ -3,11 +3,11 @@
     <Basepaths>/hr</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1562271590046</CreatedAt>
-    <CreatedBy>onlineman477@gmail.com</CreatedBy>
+    <CreatedBy>bmutziu@gmail.com</CreatedBy>
     <Description>SILENTSHADOW$ git: e148adec SilentShadow</Description>
     <DisplayName>hr-api</DisplayName>
     <LastModifiedAt>1562687096831</LastModifiedAt>
-    <LastModifiedBy>onlineman477@gmail.com</LastModifiedBy>
+    <LastModifiedBy>bmutziu@gmail.com</LastModifiedBy>
     <ManifestVersion>SHA-512:5a8b8e393941bd33f9de90bb8e2e959dd0af84369ee4247b06c9ccf814cda7c3a7a1fdab47e8f28e91e851894df59de30e0485f813b034ff05c3832210241939</ManifestVersion>
     <Policies>
         <Policy>AM-CustomErrorResponse</Policy>
