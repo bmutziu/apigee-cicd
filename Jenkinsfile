@@ -101,7 +101,7 @@ pipeline {
 
     post {
         always {
-            // cucumberSlackSend channel: 'apigee-cicd', json: '$WORKSPACE/reports.json'
+            cucumberSlackSend channel: 'testing', json: '$WORKSPACE/reports.json'
             sendNotifications currentBuild.result
         }
     }
