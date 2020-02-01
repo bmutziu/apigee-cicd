@@ -92,7 +92,7 @@ pipeline {
                         // generate cucumber reports in both Test Pass/Fail scenario
                         sh "cd $WORKSPACE/test/integration && cp reports.json $WORKSPACE"
                         cucumber fileIncludePattern: 'reports.json'
-                        //build job: 'cucumber-report'
+                        build job: 'apigee-cucumber-report'
                     }
                 }
             }
@@ -101,7 +101,7 @@ pipeline {
 
     post {
         always {
-            cucumberSlackSend channel: 'testing', json: '$WORKSPACE/reports.json'
+            // cucumberSlackSend channel: 'testing', json: '$WORKSPACE/reports.json'
             sendNotifications currentBuild.result
         }
     }
