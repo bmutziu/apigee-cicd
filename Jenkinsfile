@@ -86,13 +86,14 @@ pipeline {
                         sh "cd $WORKSPACE/test/integration && npm test"
                     } catch (e) {
                         //if tests fail, I have used an shell script which has 3 APIs to undeploy, delete current revision & deploy previous stable revision
-                        sh "sh && sh undeploy.sh"
+                        // sh "sh && sh undeploy.sh"
+                        sh "echo Undeploying ..."
                         throw e
                     } finally {
                         // generate cucumber reports in both Test Pass/Fail scenario
                         sh "cd $WORKSPACE/test/integration && cp reports.json $WORKSPACE"
                         cucumber fileIncludePattern: 'reports.json'
-                        build job: 'apigee-cucumber-report'
+                        //build job: 'apigee-cucumber-report'
                     }
                 }
             }
