@@ -9,6 +9,6 @@
     <Issuer>self</Issuer>
     <Audience>proxy,apickli</Audience>
     <AdditionalClaims>
-        <Claim name="scm" type="string">github.com/sidd-harth/apigee-cicd</Claim>
+        <Claim name="scm" type="string">github.com/bmutziu/apigee-cicd</Claim>
     </AdditionalClaims>
 </VerifyJWT>
